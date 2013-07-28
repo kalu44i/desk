@@ -7,7 +7,7 @@ module.exports.mongoose = mongoose;
 module.exports.Schema = Schema;
 
 var username = "RusKovv";
-var password = "Curiosity2012KovRus";
+var password = "heroku2012";
 var adress = '@ds037368.mongolab.com:37368/deskdb';
 connect();
 
