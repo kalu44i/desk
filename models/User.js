@@ -1,23 +1,28 @@
-var db = require('../lib/db');
+var  mongoose = require('mongoose')
+   , Schema = mongoose.Schema;
 
-var UserSchema = new db.Schema({
+
+var UserSchema = new mongoose.Schema({
 	username : {type: String, unique: true},
 	password : String
-})
+});
 
-var UserEntity = db.mongoose.model('User', UserSchema);
-module.exports.addUser = addUser;
+module.exports = mongoose.model('User', UserSchema, "UserCollection");
 
-function addUser(username, password, callback) {
-	var instance = new UserEntity();
-	instance.username = username;
-	instance.password = password;
-	instance.save(function (err) {
-		if (err) {
-			callback(err);
-		}
-		else {
-			callback(null, instance);
-		}
-	});
-}
+/* 
+var personSchema = Schema({
+  _id     : Number,
+  name    : String,
+  age     : Number,
+  stories : [{ type: Schema.Types.ObjectId, ref: 'Story' }]
+});
+
+var storySchema = Schema({
+  _creator : { type: Number, ref: 'Person' },
+  title    : String,
+  fans     : [{ type: Number, ref: 'Person' }]
+});
+
+var Story  = mongoose.model('Story', storySchema);
+var Person = mongoose.model('Person', personSchema);
+}*/
