@@ -1,19 +1,15 @@
 {
-  "name": "desk",
+  "name": "hello-mongoose",
   "version": "0.1.0",
   "description": "MongoDB with Mongoose on Node.js example",
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/RusKovv/desk.git"
-  },
   "engines": {
     "node": "0.10.x",
     "npm":  "1.2.x"
   },
   "dependencies": {
-      "express": "2.5.8"
+        "express": "2.5.8"
     , "jade": ">= 0.26.1"
-    , "mongoose": "3.5.*"
+    ,"mongoose": "3.5.7"
     , "jquery" : "1.7.3"
     , "mocha": "1.3.0"
     , "should": "1.0.0"
