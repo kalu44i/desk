@@ -2,7 +2,7 @@
 
 var assert = require('assert')
 	, db = require('../lib/db')
-	, User = require('../models/User.js')
+	, User = require('../models/User')
 	, should = require('should');
 
 

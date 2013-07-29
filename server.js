@@ -2,8 +2,8 @@
 var express = require('express')
   , routes = require('./routes')
   , fs = require('fs')
-  , User = require('./models/User')
-  , db = require('./lib/db');
+  , User = require('./models/User.js')
+  , db = require('./lib/db.js');
 
 var app = module.exports = express.createServer();
 
