@@ -3,17 +3,11 @@ var express = require('express')
   , routes = require('./routes')
   , fs = require('fs')
   , User = require('./models/User')
-  , db = require('./lib/db');
+  , conf = require('./conf')
+  , db = require('./lib/db')
+  , everyauth = require('everyauth');
 
 var app = module.exports = express.createServer();
-
-db.checkConnection(function callback(){
-	console.log("done");
-});
-db.findUser({ _id: "51f6e64fc738403c28000001" },{}, function (err, users) {
-  			if (err) return handleError(err);
-  				console.log('The stories are an array: ', users);
-		});
 
 
 app.configure(function(){
@@ -23,6 +17,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.use(express.cookieParser('mr ripley'));
+  app.use(everyauth.middleware(app));
 });
 
 app.configure('development', function(){
@@ -63,6 +59,6 @@ app.post("/signup", function(req, res) {
 	});
 
 });
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8021;
 app.listen(port);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
