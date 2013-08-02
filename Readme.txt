@@ -1,6 +1,6 @@
 Kolya, when you get to know the basic commands, clean up the readme file and add appropriate descrtiption.
 
-CHECKOUT TO dev BRANCH !!!!!!!!!!!!!!!!!!!!!!!!! everything is done in dev branch !!!!!!!!!!!!!!
+CHECKOUT TO dev BRANCH !!!!!!!!!!!!!!!!!!!!!!!!! everything is done in dev branch !!!!!!!!!!!!!! test
 
 
 important commands
